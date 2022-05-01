@@ -1,0 +1,67 @@
+.tile {
+  position: relative;
+  width: 100;
+  padding: 50px;
+
+  .tileItem {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    grid-template-rows: 23px;
+    grid-template-columns: 250px 40px 40px 30px;
+    padding: 15px;
+
+    border-radius: 4px;
+
+    background: rgba($color: #000000, $alpha: 0.4);
+
+    input[type="text"] {
+      height: auto;
+      margin: auto;
+
+      border: none;
+      outline: none;
+      background: none;
+
+      text-align: center;
+      color: #fff;
+      font-size: 1.2em;
+    }
+
+    .rm:hover {
+      filter: invert(51%) sepia(59%) saturate(4932%) hue-rotate(335deg)
+        brightness(101%) contrast(84%);
+      cursor: pointer;
+      scale: 1.1;
+    }
+
+    .saved {
+      filter: invert(50%) sepia(95%) saturate(488%) hue-rotate(77deg)
+        brightness(95%) contrast(89%);
+    }
+
+    .saved:hover {
+      filter: invert(51%) sepia(59%) saturate(4932%) hue-rotate(335deg)
+        brightness(101%) contrast(84%) !important;
+      cursor: pointer;
+    }
+
+    .save:hover {
+      filter: invert(50%) sepia(95%) saturate(488%) hue-rotate(77deg)
+        brightness(95%) contrast(89%);
+      scale: 1.1;
+      cursor: pointer;
+    }
+
+    .palette:hover {
+      cursor: pointer;
+      scale: 1.1;
+    }
+  }
+
+  transition: background-color 0.3s ease-in-out;
+}

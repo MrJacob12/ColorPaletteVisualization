@@ -1,0 +1,28 @@
+.menu {
+  z-index: 5;
+  background: #212124;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  .menuItem {
+    width: max-content;
+    margin: 0 auto;
+
+    svg {
+      fill: white;
+      cursor: pointer;
+    }
+
+    &:hover {
+      scale: 1.15;
+    }
+
+    &.clicked {
+      svg {
+        fill: #adf748;
+      }
+    }
+
+    transition: scale 0.3s ease-in-out;
+  }
+}
