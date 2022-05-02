@@ -9,7 +9,7 @@ import rm from "assets/rm.svg";
 import save from "assets/save.svg";
 
 export const Tile = (props) => {
-  const { pid, bg } = props;
+  const { pid, bg, loaded } = props;
 
   const firstColor = Math.floor(Math.random() * 16777215).toString(16);
   const [bgColor, setBgColor] = React.useState(`#${firstColor}`);
@@ -24,7 +24,6 @@ export const Tile = (props) => {
     if (bg) {
       setBgColor(bg);
       setValue(bg);
-      setSaved("save saved");
     }
   }, [bg]);
 
@@ -36,6 +35,12 @@ export const Tile = (props) => {
     }
   }, [color]);
 
+  React.useEffect(() => {
+    if (loaded) {
+      setSaved("save saved");
+    }
+  }, [loaded]);
+
   const colorChange = (e) => {
     setValue(e.target.value);
     if (/^#[0-9a-f]{3,6}$/i.test(e.target.value)) {
@@ -45,6 +50,7 @@ export const Tile = (props) => {
 
   const deleteTile = () => {
     document.getElementById(pid).remove();
+    setPaletteOpen({ display: "none" });
   };
 
   const saveTile = () => {

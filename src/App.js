@@ -1,6 +1,6 @@
 import React from "react";
 
-import { menu as Menu } from "components/menu/menu";
+import { Menu } from "components/menu/menu";
 import { Container } from "components/container/container";
 import { Tile } from "components/tile/tile";
 
@@ -12,7 +12,10 @@ export const App = () => {
   React.useEffect(() => {
     const storage = { ...window.localStorage };
     for (const [key, value] of Object.entries(storage)) {
-      setTiles((tile) => [...tile, <Tile key={key} pid={key} bg={value} />]);
+      setTiles((tile) => [
+        ...tile,
+        <Tile key={key} pid={key} bg={value} loaded={true} />,
+      ]);
     }
   }, []);
 
