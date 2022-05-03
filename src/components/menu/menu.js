@@ -75,7 +75,7 @@ export const Menu = (props) => {
   return (
     <>
       <div className="popup" style={popup}>
-        <span>Export</span>
+        <span>Export as scss</span>
         <div className="popupContent"> {colors.map((color) => color)}</div>
         <div className="popupBnt">
           <button onClick={handleExport} style={{ borderColor: "#33c345" }}>
